@@ -1,0 +1,31 @@
+Start game: 
+import os 
+import subprocess 
+import sys 
+import time 
+ 
+def launch_game(): 
+    try: 
+        # Get the current directory 
+        current_dir = os.path.dirname(os.path.abspath(__file__)) 
+         
+        # Change to the current directory 
+        os.chdir(current_dir) 
+         
+        # Print current directory for debugging 
+        print(f"Current directory: {current_dir}") 
+         
+        # Check if Python is available 
+        python_path = sys.executable 
+        print(f"Using Python at: {python_path}") 
+         
+        # Launch the game directly 
+        print("Launching Sudoku game...") 
+        os.system(f'"{python_path}" SudokuGUI.py') 
+         
+except Exception as e: 
+print(f"Error starting game: {e}") 
+print("Please make sure you have Python and pygame installed correctly.") 
+input("Press Enter to exit...") 
+if __name__ == "__main__": 
+launch_game()  
